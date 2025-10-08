@@ -1,0 +1,390 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.titleApp {
+    background-color: #2c3e50;
+    color: #fff;
+    text-align: center;
+    align-content: center;
+    height: 7vh;
+}
+
+.titleApp h2 {
+    font-size: 1.5rem;
+}
+
+.container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ecf0f1;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.footerTable {
+    background-color: #ecf0f1;
+    color: #2c3e50;
+    text-align: center;
+    align-content: center;
+    height: 3vh;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.controlsButtons {
+    width: 10%;
+    display: flex;
+    position: fixed;
+    top: 20vh;
+    right: 2%;
+}
+
+.btnControls {
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 10px;
+    text-align: center;
+    align-content: center;
+}
+
+.containerTable {
+    width: 70%;
+    height: 100%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px;
+}
+
+.titleTable {
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+}
+
+.viewTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.headerTable tr {
+    border-bottom: #2c3e50 1px solid;
+    height: 5vh;
+}
+
+.bodyTable {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.bodyTable tr {
+    border-bottom: #bdc3c7 1px solid;
+    height: 5vh;
+    cursor: pointer;
+}
+
+.footTable tr {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    height: 5vh;
+    border-top: #000305 1px solid;
+
+}
+
+#cellTable {
+    transition: opacity 0.4s ease-in-out;
+}
+
+#totalExpenses,
+#totalIncome {
+    font-weight: bold;
+}
+
+.tableButtons {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 5vh;
+}
+
+
+.btn {
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    text-align: center;
+    align-content: center;
+}
+
+.btn:hover,
+.btnControls:hover {
+    background-color: #fff;
+    color: #2c3e50;
+    border: 1px solid #2c3e50;
+}
+
+.totalDisplay {
+    margin-left: 10%;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px;
+
+
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    opacity: 0;
+    z-index: 1000;
+    pointer-events: none;
+    transition: .6s .9s;
+    --transform: translateY(-100vh);
+    --transition: --transform .8s;
+}
+
+.modalContainer {
+    margin: auto;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90%;
+    background-color: #fff;
+    border-radius: 6px;
+    padding: 3em 2.5em;
+    display: grid;
+    place-items: center;
+    grid-auto-columns: 100%;
+    transform: var(--transform);
+    transition: transform .6s
+}
+
+.titleModal {
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.formModal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+
+}
+
+label {
+    margin: 10px 0 5px 0;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.modalButtons {
+    margin-top: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.modalShow {
+    opacity: 1;
+    pointer-events: unset;
+    transition: .6s;
+    --transform: translateY(0);
+    --transition: --transform .8s .8s;
+}
+
+
+
+
+@media (max-width: 768px) {
+
+    .containerTable,
+    .controlsButtons {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 20px;
+    }
+
+    .titleApp h2 {
+        font-size: 1rem;
+    }
+
+    .navBar {
+        background-color: #2c3e50;
+        color: #ecf0f1;
+        text-align: center;
+        align-content: center;
+        height: 7vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .menu-toggle {
+        font-size: 2rem;
+        cursor: pointer;
+        color: #ecf0f1;
+        background: none;
+    }
+
+    /* Contenedor del menú */
+    .controlsButtons {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
+        height: 100vh;
+        background: rgba(30, 30, 30, 0.4);
+        /* gris oscuro con 40% de opacidad */
+        backdrop-filter: blur(10px);
+        /* efecto de desenfoque elegante */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2);
+        transform: translateX(-100%);
+        animation: slideIn 0.4s forwards;
+        z-index: 1000;
+        text-align: center;
+    }
+
+    /* Ítems del menú */
+    .btnControls {
+        width: 100%;
+        background: none;
+        border: none;
+        color: #ecf0f1;
+        font-size: 18px;
+        margin: 10px 0;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .btnControls:hover {
+        color: #00ffff;
+    }
+
+    /* Animación de entrada */
+    @keyframes slideIn {
+        to {
+            transform: translateX(0);
+        }
+    }
+
+    /* Animación de salida */
+    @keyframes slideOut {
+        to {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    }
+}
+
+
+
+/* Fondo oscuro del modal */
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Mostrar el overlay con animación */
+.modalOverlay.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Contenedor del modal */
+.modalSelector {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    text-align: center;
+    transform: translateY(-20px);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Mostrar el modal con animación */
+.modalOverlay.show .modalSelector {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Botones dentro del modal */
+.modalSelector button {
+    margin: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #2c3e50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.modalSelector button:hover {
+    background-color: #fff;
+    color: #2c3e50;
+    border: 1px solid #2c3e50;
+}
